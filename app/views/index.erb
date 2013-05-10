@@ -4,9 +4,22 @@
   <a href="/game/create">start a game</a>
   <h1>There's a current user!</h1>
 
-  <% @games.each do |game| %>
-    Dog<br/>
-    <li><%= egame.id %></li>
+<% unless @games == nil %>
+    <table>
+    <% @games.each do |game| %>
+
+
+      
+        <tr>
+          <td>Game number <%= game.id %></td>
+          <td><%= game.users.first.user_name %></td>
+          <td>Join game!</td>
+        </tr>
+
+    
+
+    <% end %>
+    </table> 
   <% end %>
 
 
