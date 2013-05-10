@@ -1,8 +1,8 @@
-get 'game/:id' do
+get '/game/:id' do
   erb :game
 end
 
-post 'game/:id' do
+post '/game/:id' do
   content_type :json
   game = Game.find(params[:id])
   {GameID: game.id, Moves: game.moves, 
