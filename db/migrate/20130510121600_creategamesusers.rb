@@ -2,9 +2,9 @@ class Creategamesusers < ActiveRecord::Migration
   def change
     create_table :games_users do |t|
       t.references :game
-      t.references :player
+      t.references :user
     end
 
-    add_index :games_players [:game_id, :player_id], :unique => true
+    add_index :games_users [:game_id, :user_id], :unique => true
   end
 end
