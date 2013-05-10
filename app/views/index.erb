@@ -1,10 +1,18 @@
 <% if current_user %>
   
-  <ul>
+  <td><a href="#">Start New Game</a></td>      
+
+  
+  <table>
   <% @games.each do |game| %>
-    <li><%= game %>rake c </li>
+    <tr>
+      <td>Game number <%= game.id %></td>
+      <td><%= game.users.first.user_name %></td>
+      <td><a href="#">Join Game</a></td>      
+
+    </tr>
   <% end %>
-  </ul>
+  </table>
 
   <h1>There's a current user!</h1>
 <% else %>
