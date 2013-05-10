@@ -13,7 +13,7 @@
         <tr>
           <td>Game number <%= game.id %></td>
           <td><%= game.users.first.user_name %></td>
-          <td>Join game!</td>
+          <td><a href="/game/<%= game.id %>"> Join game!</a>  </td>
         </tr>
 
     
