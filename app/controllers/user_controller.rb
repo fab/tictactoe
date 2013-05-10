@@ -9,8 +9,8 @@ post '/login' do
     
   if @user
     session[:user_id] = @user.id
+    @games = Game.find_all_by_moves(nil)
     erb :index
-
   else
     return "sorry, you fucked up"
   end
@@ -26,7 +26,10 @@ get '/game/create' do
   user = User.find(session[:user_id])
   game = Game.create
   user.games << game
+
+  @games = Game.find_all_by_moves(nil)
   p user
+  erb :index
 end
 
 

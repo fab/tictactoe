@@ -1,13 +1,15 @@
 <% if current_user %>
   
   <td><a href="#"><%= @user.user_name %></a></td>      
-
   <a href="/game/create">start a game</a>
-
-  
-
-
   <h1>There's a current user!</h1>
+
+  <% @games.each do |game| %>
+    Dog<br/>
+    <li><%= egame.id %></li>
+  <% end %>
+
+
 <% else %>
   <h4>Sign up</h4>
   <form name="signup" action="/signup" method="post">
