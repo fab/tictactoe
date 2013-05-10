@@ -33,7 +33,6 @@ get '/game/create' do
 end
 
 
-
 # get '/users/new' do
 #   # render sign-up page
 #   @user = User.new
