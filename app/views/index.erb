@@ -1,18 +1,9 @@
 <% if current_user %>
   
-  <td><a href="#">Start New Game</a></td>      
+  <td><a href="#"><%= @user.user_name %></a></td>      
 
   
-  <table>
-  <% @games.each do |game| %>
-    <tr>
-      <td>Game number <%= game.id %></td>
-      <td><%= game.users.first.user_name %></td>
-      <td><a href="#">Join Game</a></td>      
 
-    </tr>
-  <% end %>
-  </table>
 
   <h1>There's a current user!</h1>
 <% else %>
