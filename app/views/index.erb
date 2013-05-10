@@ -1,4 +1,11 @@
 <% if current_user %>
+  
+  <ul>
+  <% @games.each do |game| %>
+    <li><%= game %>rake c </li>
+  <% end %>
+  </ul>
+
   <h1>There's a current user!</h1>
 <% else %>
   <h4>Sign up</h4>

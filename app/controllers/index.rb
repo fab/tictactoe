@@ -1,5 +1,6 @@
 get '/' do
   erb :index
+  @games = Game.where("moves = ?", nil)
 end
 
 
