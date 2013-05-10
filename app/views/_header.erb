@@ -4,10 +4,10 @@
 
   <ul class='navlist'>
     <% if current_user %>
-      <li><a id="sign-out" href="/sessions/<%= current_user.id %>">Sign Out</a></li>
+      <li><a id="sign-out" href="/logout %>">Sign Out</a></li>
     <% else %>
-      <li><a href="/sessions/new">Sign In</a></li>
-      <li><a href="/users/new">Sign Up</a></li>
+<!--       <li><a href="/sessions/new">Sign In</a></li>
+      <li><a href="/users/new">Sign Up</a></li> -->
     <% end %>
   </ul>
 
