@@ -10,6 +10,7 @@ post '/login' do
   if @user
     session[:user_id] = @user.id
     erb :index
+
   else
     return "sorry, you fucked up"
   end
@@ -19,6 +20,13 @@ get '/logout' do
   session.clear
   p @user
   redirect '/'
+end
+
+get '/game/create' do
+  user = User.find(session[:user_id])
+  game = Game.create
+  user.games << game
+  p user
 end
 
 

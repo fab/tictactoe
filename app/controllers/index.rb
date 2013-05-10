@@ -1,5 +1,5 @@
 get '/' do
-  p @user
+  p @user.user_name
   @games = Game.find_all_by_moves(nil)
   erb :index
 end
