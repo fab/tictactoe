@@ -1,6 +1,8 @@
 post '/signup' do
   @user = User.create(params)
   session[:user_id] = @user.id
+  @games = Game.find_all_by_moves(nil)
+
   erb :index
 end
 
@@ -9,17 +11,18 @@ post '/login' do
     
   if @user
     session[:user_id] = @user.id
+    @games = Game.find_all_by_moves(nil)
     erb :index
   else
-    return "sorry, you fucked up"
+    return "sorry, incorrect login"
   end
 end
 
-post '/logout' do
+get '/logout' do
   session.clear
+  p @user
   redirect '/'
 end
-
 
 
 # get '/users/new' do

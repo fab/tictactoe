@@ -1,13 +1,20 @@
-get '/game/:id' do
-  # game = Game.find(params[:id])
-  # game.update_attributes(moves: [])
-  @gameid = params[:id]
-  erb :game
+
+get '/game/create' do
+  user = User.find(session[:user_id])
+  game = Game.create
+  user.games << game
+
+  @games = Game.find_all_by_moves(nil)
+  p user
+  erb :index
 end
 
-get '/creategame' do
-  game = Game.create(moves: '')
-  redirect "/game/#{game.id}"
+get '/game/:id' do
+  if current_user
+    Game.find(params["id"]).users << current_user
+    @gameid = params[:id]
+  end
+  erb :game
 end
 
 post '/game/:id' do

@@ -1,6 +1,7 @@
 get '/' do
+  # p @user.user_name
+  @games = Game.find_all_by_moves(nil)
   erb :index
-  @games = Game.where("moves = ?", nil)
 end
 
 

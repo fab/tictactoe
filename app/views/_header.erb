@@ -1,11 +1,15 @@
 <nav>
 
-  <div class="brand"><a href="/"><h1>BRAND</h1></a></div>
+  <div class="brand"><a href="/"><h1>Tic-Tac-Yo!!!</h1></a></div>
 
   <ul class='navlist'>
     <% if current_user %>
-      <li><a id="sign-out" href="/logout %>">Sign Out</a></li>
+      <%= @user.user_name %>
+      <li>
+        <a href="/logout">Sign Out</a>
+      </li>
     <% else %>
+      logged out
 <!--       <li><a href="/sessions/new">Sign In</a></li>
       <li><a href="/users/new">Sign Up</a></li> -->
     <% end %>
