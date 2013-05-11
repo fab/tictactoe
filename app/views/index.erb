@@ -1,18 +1,19 @@
+<script src="/js/lobby.js"></script>
+
 <% if current_user %>
-  
-  <td><a href="#"><%= @user.user_name %></a></td>      
+      
   <a href="/game/create">start a game</a>
-  <h1>There's a current user!</h1>
+  <h1>Welcome, <%=@user.user_name%></h1>
 
 <% unless @games == nil %>
-    <table>
+    <table id="lobby_table">
     <% @games.each do |game| %>
 
 
       
         <tr>
           <td>Game number <%= game.id %></td>
-          <td><%= game.users.first.user_name %></td>
+          <td>Game creator: <%= game.users.first.user_name %></td>
           <td><a href="/game/<%= game.id %>"> Join game!</a>  </td>
         </tr>
 

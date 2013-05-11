@@ -12,7 +12,7 @@ post '/login' do
     @games = Game.find_all_by_moves(nil)
     erb :index
   else
-    return "sorry, you fucked up"
+    return "sorry, incorrect login"
   end
 end
 

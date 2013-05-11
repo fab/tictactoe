@@ -1,4 +1,5 @@
 body {
+  background: url('/images/cream_pixels.png');
   background-color: #C8C8A9;
 }
 
@@ -12,7 +13,8 @@ h6 {
 }
 
 nav {
-  background-color: #698E7F;
+  /*background: url('/images/binding_dark.png');*/
+  background-color: #191919;
   height: 40px;
   width: 100%;
 }
@@ -28,6 +30,7 @@ td {
 }
 
 .brand a {
+  /*font-family: 'Oleo Script Swash Caps', cursive;*/
   text-decoration: none;
 }
 
@@ -60,6 +63,8 @@ td {
 
 
 .container {
+  border-radius: 10px;
+  background-color: white;
   margin: 20px auto;
   width: 80%;
   padding: 0px 20px 20px 20px;
@@ -74,6 +79,23 @@ td {
 #sign-in {
 }
 
+#lobby_table {
+  padding: 0;
+  width: 100%;
+}
+
+#lobby_table td {
+  padding: 5px;
+  height: 30px;
+}
+
+#lobby_table tr {
+  height: 20px;
+}
+
+#lobby_table tr:nth-child(2n+1) {
+  background-color: #FFFFE6;
+}
 
 
 
