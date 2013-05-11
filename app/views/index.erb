@@ -1,8 +1,8 @@
-<script src="/js/lobby.js"></script>
+<!-- <script src="/js/lobby.js"></script> -->
 
 <% if current_user %>
       
-  <a href="/game/create">start a game</a>
+  <a href="/game/create" id="create_game">Start a Game</a>
   <h1>Welcome, <%=@user.user_name%></h1>
 
 <% unless @games == nil %>
@@ -14,7 +14,7 @@
         <tr>
           <td>Game number <%= game.id %></td>
           <td>Game creator: <%= game.users.first.user_name %></td>
-          <td><a href="/game/<%= game.id %>"> Join game!</a>  </td>
+          <td><a id="create_game" href="/game/<%= game.id %>"> Join game!</a>  </td>
         </tr>
 
     

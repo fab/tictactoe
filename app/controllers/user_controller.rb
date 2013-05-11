@@ -1,6 +1,8 @@
 post '/signup' do
   @user = User.create(params)
   session[:user_id] = @user.id
+  @games = Game.find_all_by_moves(nil)
+
   erb :index
 end
 
@@ -20,16 +22,6 @@ get '/logout' do
   session.clear
   p @user
   redirect '/'
-end
-
-get '/game/create' do
-  user = User.find(session[:user_id])
-  game = Game.create
-  user.games << game
-
-  @games = Game.find_all_by_moves(nil)
-  p user
-  erb :index
 end
 
 

@@ -1,6 +1,21 @@
+
+get '/game/create' do
+  user = User.find(session[:user_id])
+  game = Game.create
+  user.games << game
+
+  @games = Game.find_all_by_moves(nil)
+  p user
+  erb :index
+end
+
 get '/game/:id' do
+  if current_user
+    Game.find(params["id"]).users << current_user
+  end
   erb :game
 end
+
 
 post '/game/:id' do
   content_type :json
